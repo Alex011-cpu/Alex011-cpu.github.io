@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura&family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap');
+html{
+	scroll-behavior: smooth;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;	
+}
+html,body{
+	height:100%;
+}
+.wrapper{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+}
+.header:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 2;
+}
+.second_header{
+	background-color: #F1F5F9;
+	margin-top:80px;
+	width: 100%;
+	height: 56px;
+	font-family: 'Jura', sans-serif;
+	font-size: 25px;
+	padding:13px 0px 13px 0px;
+}
+.header_body{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 80px;
+	align-items: center;
+}
+.header_logo{
+	text-decoration: none;
+	color: white;
+	font-family: 'Jura', sans-serif;
+	font-size: 25px;
+	position: relative;
+	z-index: 3;	
+}
+.header_menu ul{
+	width: 600px;
+	display: flex;
+	justify-content: space-around;
+}
+.header_list{
+	position: relative;
+	z-index: 2;
+}
+.header_list li{
+	list-style: none;
+	margin-left: -25px;
+}
+.header_link{
+	color: #fff;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	font-size: 17px;
+	transition: all 0.3s;
+}
+.header_link:hover{
+	color:#5d58f5;
+}
+.container{
+	max-width: 1180px;
+	margin: 0px auto;
+	padding: 0px 10px;
+}
+.header_burger{
+	display: none;
+}
+#block{
+	margin-top: 100px;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	color:white;
+}
+@media (max-width: 768px) {
+	.header_logo{
+		font-size: 20px;
+	}
+	.header_burger{
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		z-index: 3;
+	}
+	.header_burger.active:before{
+		top: 9px;
+		transform:rotate(45deg);
+	}
+	.header_burger.active:after{
+		bottom: 9px;
+		transform: rotate(-45deg);
+	}
+	.header_burger.active span{
+		transform: scale(0);
+	}
+	.header_burger span{
+		position: absolute;
+		background-color: #fff;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		top: 9px;
+	}
+	.header_burger:before,
+	.header_burger:after{
+		content: '';
+		background-color: #fff;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 0;
+		transition: all 0.3s; 	
+	}
+	.header_burger:after{
+		bottom: 0;
+	}
+	.header_menu{
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height:100%;
+		background-color: black;
+		opacity: .9;
+		padding: 60px 0px 0px 40px;
+		transition: all 0.2s;
+	}
+	.header_menu ul{
+		display: block;
+	}
+	.header_menu li{
+		margin-bottom:20px; 
+	}
+	.header_list{
+		margin-top:30px; 
+	}
+}
+/*Order section*/
+.order_page{
+	padding-top:70px; 
+	display: flex;
+}
+.order{
+	position: relative;
+	margin:0px 83px 0px 20px; 
+	font-size: 15px;
+	font-family: 'Prompt', sans-serif;
+	align-self: flex-end;
+}
+.order p{
+	position: absolute;
+	bottom: -90px;
+	left: 0;
+	padding-left: 10px;
+	height: 80px;
+}
+.order a{
+	text-decoration: none;
+	color: white;
+}
+.button{
+	bottom:-150px;
+	left: 0;
+	position: absolute;
+	width: 278px;
+	text-align: center;
+	background-color: black;
+	line-height: 45px;
+	border-radius:51px;
+}
+.button:hover{
+	background-color: #5865f5;
+	transition: all 0.2s;
+}
+@media (max-width: 1180px)	{
+	.second_header{
+		margin-top: 80px;
+	}
+	.order_page{
+		flex-direction: column;
+	}
+	.order{
+		margin:0px auto 200px auto; 
+	}
+	.order p{
+		position: relative;
+		margin: 0px auto 0px auto;
+		bottom: -60px;
+		padding-left: 0px;
+		width: 300px;
+	}
+	.button{
+		bottom:-70px;
+		left: 0;
+		margin: 0px auto 0px auto;
+		position: relative;
+	}
+	.order img{
+		max-width: 100%;
+	}
+}
+
+/*banner sector*/
+.banner_page{
+	width: 100%;
+	margin-top: 300px;
+	background: url("https://www.sony.ru/image/72d4a3acc023ab3b638c54daeb5e062f?fmt=pjpeg&wid=2000&qlt=85") center/cover no-repeat;
+	height: 300px;
+}
+.banner_page .text{
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	padding-top:19px;
+	padding-left:42px;
+	max-width: 532px;
+	margin-bottom: 29px;
+}
+.banner_page p{
+	padding-top:19px;
+	font-size: 15px;
+	line-height: 23px;
+}
+.banner_page h1{
+	font-weight: normal;
+	font-size: 40px;
+}
+.button1{
+	margin-top:29px;
+	padding:12px 51px;
+	text-align: center;
+	background-color: #5865f5;
+	line-height: 55px;
+	margin-left:42px;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	cursor: pointer;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+.button1:hover{
+	background-color: #3944BD;
+	transition: all 0.2s;
+}
+@media (max-width: 768px){
+	.banner_page{
+		margin-top: 50px;
+	}
+	.banner_page{
+		position: relative;
+	}
+	.banner_page .container{
+		position: absolute;
+		top: 300px;
+		left:-40px; 
+	}
+	.banner_page .text{
+		color: #000;
+	}
+}
+@media (max-width: 1180px) {
+	.banner_page{
+		margin-top: 50px;
+	}
+}
+/*banner sector second*/
+.banner_page_second{
+	max-width: 1440px;
+	height: 627px;
+	margin: 111px auto 0px auto;
+	background: url("https://www.sony.ru/image/14e12480931d4d438e4766cf094d148b?fmt=jpeg&wid=1440&qlt=85") center/cover no-repeat;
+	position: relative;
+}
+.banner_content{
+	position: absolute;
+	left: 69px;
+	top: 107px;
+	height: 413px;
+	max-width: 770px;
+	background-color: rgba(5, 13, 33, 0.9);
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 	40px;
+	z-index: 1;
+}
+.banner_content .text{	
+	padding: 25px 222px 45px 114px;
+}
+.banner_content .button1{
+	margin: 0px 0px 0px 114px ;
+	font-size:20px; 
+}
+@media(max-width:768px )
+{
+	.banner_page_second{
+		margin-top: 350px;
+	}
+	.banner_content{
+		left:0;
+		top:377px;
+		height: 250px;
+		width: 100%;
+		font-size: 25px;
+	}
+	.banner_content .text{
+		padding: 20px 0px 10px 40px;
+	}
+	.banner_content .button1{
+		margin-left:40px; 
+	}
+}	
+/*Game sector*/
+.video-drop{
+	position: fixed;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height:100%;
+	background-color: rgba(0, 0, 0, 0.8);
+    z-index: 101;
+    text-align:right;
+}
+.wrap{
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0px 3% 0px 3%;
+	position: relative;
+	top: 50%;                         
+    transform: translate(0, -60%);
+}
+.video-drop i{
+	font-size:30px;
+	color: #fff;
+	padding-bottom:10px;
+	cursor: pointer;
+	opacity: .5;                   
+}
+.video-drop i:hover{
+	opacity: .9;
+}
+.video_container {
+	position: relative;
+	padding-bottom: 56.25%; 
+	height:0;
+	overflow: hidden;
+}
+.video_container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.game_section,.accessories_sector{
+	font-family: 'Roboto', sans-serif;
+}
+.game_header,.accessories_header{
+	max-width: 1230px;
+	height: 100%;
+	background-color: #000;
+	margin:111px 0px 80px 50%; 
+	color: white;
+	font-size: 40px;
+	font-weight: lighter;
+	text-transform: uppercase;
+}
+.game_header p,.accessories_header p{
+	padding: 23px 0px 23px 95px;
+}
+@media (max-width: 768px) {
+	.game_header,.accessories_header{
+		margin-left: 0;
+		font-size: 30px;
+		text-align: center;
+		background-color: #fff;
+		color: #000;	
+	}
+	.game_header p,.accessories_header p{
+	padding-left: 0;
+	letter-spacing: 5px;
+     }
+}
+/*Якорь*/
+#a1,#a2,#a3{
+	height: 79px;
+	width: 1px;
+}
+
+.ps4_game_content .text{
+	padding: 4% 0px 0px 5.7%;
+	max-width: 500px;
+}
+.ps4_game_content .description{
+	color: #fff;
+	font-size: 15px;
+	padding-bottom: 7%
+}
+.ps4_game_content img{
+	max-width: 100%;
+	padding:4.3% 0px 5% 9%; 
+	object-fit: contain;
+}
+.ps4_header{
+	color:#fff;
+	font-size: 30px;
+	margin-bottom:11%; 
+}
+.spider_page{
+	background: url("../img/ToNDrsr 1 (1).png") center/cover no-repeat;
+	width: 100%;
+}
+.ps4_game_content{
+	display: flex;
+}
+.ps4_game_content .button1{
+	padding: 0;
+	width: 190px;
+	height: 55px;
+	margin-left: 0px;
+	margin-bottom:30px; 
+	background-color: #0072CE;
+}
+@media (max-width:1400px){
+	.ps4_game_content img{
+		width: 700px;
+	}
+}
+@media (max-width: 1160px) {
+	.ps4_game_content img{
+		width: 500px;
+	}
+	.ps4_header{
+		margin-bottom:3%;
+	}
+}
+@media (max-width: 878px) {
+	.ps4_game_content img{
+		width: 400px;
+	}
+}
+@media (max-width: 768px) {
+	.ps4_game_content{
+		flex-direction: column;
+	}
+	.righ_side_game_page .ps4_game_content{
+		flex-direction: column-reverse;
+	}
+	.ps4_game_content img{
+		width: 768px;
+		padding: 0;
+		max-width: 100%;
+	}
+	.ps4_game_content .text{
+		max-width: 100%;
+		padding: 0;
+	}
+	.righ_side_game_page img{
+		margin: 0px auto 0px auto;
+	}
+}
+.god-of-war_page .ps4_game_content {
+	background: url("../img/god_back.png")center/cover no-repeat;
+	width: 100%;
+}
+.tsushima_page .ps4_game_content{
+	background: url("../img/wallhaven-5w2375 1.png")center/cover no-repeat;
+	width: 100%;
+}
+@media (min-width: 769px) {
+	.righ_side_game_page img{
+		margin-right:5%; 
+	}
+	.righ_side_game_page{
+		padding-left:16%; 
+	}
+	.righ_side_game_page .text{
+		width: 498px;
+	}
+}
+.righ_side_game_page{
+	background-color: #EDEDED;
+}
+.righ_side_game_page .ps4_header,.righ_side_game_page .description{
+	color: #000;
+}
+
+/*accessories_sector*/
+.accessories_sector .dualshock4{
+	text-transform: uppercase;
+	margin: 0px 0px 80px 0px;
+	font-size: 40px;
+	color: #272727;
+}
+.gamepad img{
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+.gamepad .text{
+	margin-top:5%; 
+	display: flex;
+	justify-content: space-around;
+}
+.gamepad .function{
+	max-width: 300px;
+}
+.function .head{
+	font-size: 25px;
+	margin-bottom:11px;
+
+}
+.function .description{
+	color:#636262;
+}
+.dualsense{
+	margin: 147px 0px 147px 0px;
+	font-size: 40px;
+	color: #272727;
+	text-align: center;
+}
+@media (max-width: 769px) {
+	.dualshock4{
+		text-align: center;
+	}
+	.gamepad .text{
+		flex-direction: column;
+	}
+	.gamepad .function {
+		max-width: 700px;
+		margin-top: 30px;	
+	}
+}
+/*sub_section*/
+.subscription{
+	margin-top: 173px;
+	position: relative;
+}
+video{
+	object-fit: cover;
+}
+.subscription .text{
+	font-family: 'Roboto', sans-serif;
+	color:white;
+	position: absolute;
+	font-size: 15px;
+	line-height: 25px;
+}
+.subscription .header_sub{
+	margin-top: 64px;
+	font-size: 30px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #fff;
+	max-width: 243px;
+}
+.subscription .description_sub{
+	margin-top:51px; 
+	max-width: 586px;
+}
+@media (max-width:1100px ) {
+	.subscription .text{
+		padding-left:10px;
+	}
+}
+/*footer*/
+.footer{
+	margin-top: 237px;
+	width: 100%;
+	height: 250px;
+	background-color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+.footer .container{
+	display: flex;
+	justify-content: space-between;
+}
+.footer .number,.footer .social-icons{
+	margin: 30px 0px;
+}
+.contuct,.social{
+	color: #FFF;
+	font-size: 20px;
+	margin-top:50px; 
+}
+.social-icons{
+	font-size: 30px;
+}
+@media (max-width: 400px) {
+	.footer .number,.footer .mail{
+	font-size: 15px;
+}
+.social-icons{
+	font-size: 15px;
+}
+.social-icons i{
+	padding: 0px 5px 0px 0px;
+}
+}
