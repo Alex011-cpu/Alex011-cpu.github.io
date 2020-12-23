@@ -58,4 +58,50 @@ function turnOnVideo(){
 }
 turnOnVideo();
 /*Slider*/
+        let arr=['0','1','2','3']
+        let i=0
+        let e=document.querySelector('body > div.accessories_sector > div:nth-child(2) > div > img');
+        function nextSlides () {
+            i++         
+            if(i>arr.length-1){
+                i=0
+            }
+            e.src='img/DUALSHOCK4_'+i+'.png'
+        }
+        function prevSlides (){
+            i--
+            if(i<0){
+                i=arr.length-1
+            }
+            e.src='img/DUALSHOCK4_'+i+'.png'
+        }
 
+/*ANIMATION*/
+let gameSections=document.querySelectorAll('.ani')
+if(gameSections.length>0){
+    window.addEventListener('scroll',animOnScroll);
+    function animOnScroll(params){
+        for (let index=0;index<gameSections.length;index++){
+            const animItem=gameSections[index];
+            const animItemHeight=animItem.offsetHeight;
+            const animItemOffset=offset(animItem).top;
+            const animStart = 4;
+
+            let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+            if(animItemHeight > window.innerHeight){
+                animItemPoint = window.innerHeight - animItemPoint / animStart;
+            }
+
+            if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
+                animItem.classList.add('ani_active');
+            }
+        }
+    }
+    function offset(el){
+        const rect=el.getBoundingClientRect(),
+            scrollLeft=window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop=window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    }
+}
