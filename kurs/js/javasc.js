@@ -77,7 +77,14 @@ turnOnVideo();
         }
 
 /*ANIMATION*/
+
+let text=document.querySelectorAll('.text .function')
+makeAni(text)
+function makeAni(param){
+    param.forEach(element=>element.classList.add('ani'))
+}
 let gameSections=document.querySelectorAll('.ani')
+console.log(gameSections)
 if(gameSections.length>0){
     window.addEventListener('scroll',animOnScroll);
     function animOnScroll(params){
